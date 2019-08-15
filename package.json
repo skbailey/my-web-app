@@ -1,0 +1,11 @@
+{
+  "name": "my-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node --experimental-modules index.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sherard@gmail.com",
+  "license": "ISC"
+}
