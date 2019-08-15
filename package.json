@@ -1,7 +1,7 @@
 {
   "name": "my-web-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A sample application to demonstrate Spinnaker CI/CD",
   "scripts": {
     "start": "node --experimental-modules index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
