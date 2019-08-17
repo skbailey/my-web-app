@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-web-app
+  template:
+    metadata:
+      labels:
+        app: my-web-app
+      name: my-web-app
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - image: index.docker.io/sh3r4rd/my-web-app
+        name: my-web-app
+        command: ["npm", "start"]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 60
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 5
